@@ -1,4 +1,4 @@
-package beans;
+package com.jpmorgan.beans;
 
 import java.util.Set;
 
@@ -18,9 +18,9 @@ public class Author {
 
 	@Id
 	@Min(1)
-	@Column(name = "AUTHOR_ID")
-	@SequenceGenerator(name = "AUTHOR_ID", sequenceName = "AUTHOR_ID")
-	@GeneratedValue(generator = "AUTHOR_ID", strategy = GenerationType.SEQUENCE)
+	@Column(name = "AuthorID")
+	@SequenceGenerator(name = "AuthorID", sequenceName = "AuthorID")
+	@GeneratedValue(generator = "AuthorID", strategy = GenerationType.SEQUENCE)
 	private int authorID;
 
 	@Column(nullable = false)
