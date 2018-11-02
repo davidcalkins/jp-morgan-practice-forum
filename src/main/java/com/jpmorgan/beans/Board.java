@@ -1,4 +1,4 @@
-package beans;
+package com.jpmorgan.beans;
 
 import java.sql.Date;
 import java.util.Set;

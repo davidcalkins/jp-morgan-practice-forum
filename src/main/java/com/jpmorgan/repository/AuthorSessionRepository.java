@@ -5,14 +5,14 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jpmorgan.beans.Author;
-
+import com.jpmorgan.beans.AuthorSession;
 
 @Repository
 @Transactional
-public interface AuthorRepository extends JpaRepository<Author, Integer> {
-
-	public Author findById(int authorID);
+public interface AuthorSessionRepository extends JpaRepository <AuthorSessionRepository, String> { 
 
 	
-	
+	public AuthorSession findByToken(String token );
+	public AuthorSession findByAuthor(Author author);
+ 
 }
