@@ -5,7 +5,9 @@
 	<groupId>com.jpmorgan</groupId>
 	<artifactId>jp-morgan-practice-forum</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
 
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -38,6 +40,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+
 		</dependency>
 
 		<!-- Spring Cloud -->
@@ -77,9 +80,12 @@
 		</dependency>
 	</dependencies>
 
+
+
 	<!-- Maven Build Configuration -->
 	<build>
-		<finalName>rideshare-matching-service</finalName>
+
+		<finalName>jpmc-practice-forum</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>

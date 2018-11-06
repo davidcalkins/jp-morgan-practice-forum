@@ -14,7 +14,7 @@ import com.jpmorgan.beans.Board;
 public interface BoardRepository extends JpaRepository<Board, Integer> {
 
 	public Board findById(Board boardID);
-	
+
 	public List<Board> findByAuthor(Author author);
 
 }

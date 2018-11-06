@@ -17,7 +17,7 @@ public interface ForumPostRepository extends JpaRepository<ForumPost, Integer> {
 	public List<ForumPost> findByBoard(Board board);
 
 	public List<ForumPost> findByAuthor(Author author);
-	
+
 	public ForumPost findById(int forumPostID);
-	
+
 }
