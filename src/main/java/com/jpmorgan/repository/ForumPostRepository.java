@@ -18,6 +18,6 @@ public interface ForumPostRepository extends JpaRepository<ForumPost, Integer> {
 
 	public List<ForumPost> findByAuthor(Author author);
 
-	public ForumPost findById(int forumPostID);
+	public ForumPost findByForumPostID(int forumPostID);
 
 }

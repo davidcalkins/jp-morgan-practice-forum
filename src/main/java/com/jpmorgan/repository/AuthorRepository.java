@@ -11,7 +11,7 @@ import com.jpmorgan.beans.Author;
 @Transactional
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
 
-	public Author findById(int authorID);
+	public Author findByAuthorID(int authorId);
 
 	
 	

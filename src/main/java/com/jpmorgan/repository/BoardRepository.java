@@ -13,7 +13,7 @@ import com.jpmorgan.beans.Board;
 @Transactional
 public interface BoardRepository extends JpaRepository<Board, Integer> {
 
-	public Board findById(Board boardID);
+	public Board findByboardID(Board boardID);
 
 	public List<Board> findByAuthor(Author author);
 

@@ -9,9 +9,9 @@ import com.jpmorgan.beans.AuthorSession;
 
 @Repository
 @Transactional
-public interface AuthorSessionRepository extends JpaRepository<AuthorSessionRepository, String> {
+public interface AuthorSessionRepository extends JpaRepository<AuthorSession, String> {
 
-	public AuthorSession findByToken(String token);
+	public AuthorSession findByAuthorSessionID(String token);
 
 	public AuthorSession findByAuthor(Author author);
 
