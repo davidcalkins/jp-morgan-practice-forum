@@ -1,6 +1,7 @@
 package com.jpmorgan.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +13,7 @@ import com.jpmorgan.repository.AuthorRepository;
 
 @RestController
 @RequestMapping("/author")
-
+@Lazy(true)
 public class AuthorController {
 
 	@Autowired
@@ -20,6 +21,6 @@ public class AuthorController {
 
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Author getUser(@PathVariable("id") int id) {
-		return authorRepository.findById(id);
+		return authorRepository.findByAuthorID(id);
 	}
 }
