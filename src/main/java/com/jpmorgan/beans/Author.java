@@ -17,7 +17,6 @@ import javax.validation.constraints.Min;
 public class Author {
 
 	@Id
-	@Min(1)
 	@Column(name = "AuthorID")
 	@SequenceGenerator(name = "AuthorID", sequenceName = "AuthorID")
 	@GeneratedValue(generator = "AuthorID", strategy = GenerationType.SEQUENCE)
@@ -29,21 +28,14 @@ public class Author {
 	@Column(nullable = false)
 	private String username;
 
-	
 	@Column(nullable = false)
 	private String email;
-	
+
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "forumPostID")
 	private Set<ForumPost> forumPost;
-	
-	
-	
-	
-	
-	
 
 	public Author() {
-		
+
 	}
 
 	public int getAuthorID() {
@@ -78,6 +70,4 @@ public class Author {
 		this.email = email;
 	}
 
-	
-	
 }
