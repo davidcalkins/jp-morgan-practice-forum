@@ -11,7 +11,7 @@ import com.jpmorgan.beans.AuthorSession;
 @Transactional
 public interface AuthorSessionRepository extends JpaRepository<AuthorSession, String> {
 
-	public AuthorSession findByAuthorSessionID(String token);
+	public AuthorSession findByauthorSessionToken(String token);
 
 	public AuthorSession findByAuthor(Author author);
 
