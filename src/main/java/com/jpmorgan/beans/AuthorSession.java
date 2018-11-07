@@ -7,26 +7,30 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "authorsession")
 public class AuthorSession {
 
 	@Id
-	@Column(name = "AuthorSessionID")
+	@Column(name = "authorsessiontoken")
 	private String authorSessionToken;
 	
-	@Column
+	@Column(name = "expirationdate")
 	private Date expirationDate;
 	
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "authorID")
-	private Author Author;
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "authorID")
+	private Author author;
 
 	public AuthorSession(String authorSessionToken, Date expirationDate, com.jpmorgan.beans.Author author) {
 		super();
 		this.authorSessionToken = authorSessionToken;
 		this.expirationDate = expirationDate;
-		Author = author;
+		this.author = author;
 	}
 
 	public AuthorSession() {
@@ -49,11 +53,11 @@ public class AuthorSession {
 	}
 
 	public Author getAuthor() {
-		return Author;
+		return author;
 	}
 
 	public void setAuthor(Author author) {
-		Author = author;
+		this.author = author;
 	}
 	
 	

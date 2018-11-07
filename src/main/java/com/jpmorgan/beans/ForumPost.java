@@ -11,26 +11,28 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.validation.constraints.Min;
 
 @Entity
+@Table(name = "forumpost")
 public class ForumPost {
 	
 	@Id
 	@Min(1)
-	@Column(name = "forumPostID")
-	@SequenceGenerator(name = "forumPostID", sequenceName = "forumPostID")
-	@GeneratedValue(generator = "forumPostID", strategy = GenerationType.SEQUENCE)
+	@Column(name = "forumpostID")
+	@SequenceGenerator(name = "forumpostID", sequenceName = "forumpostID")
+	@GeneratedValue(generator = "forumpostID", strategy = GenerationType.SEQUENCE)
 	private int forumPostID;
 	
-	@Column
+	@Column(name = "submittedtime")
 	private Date submittedTime;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "authorID", nullable = false)
 	private Author author;
 	
-	@Column
+	@Column(name = "body")
 	private String body;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
