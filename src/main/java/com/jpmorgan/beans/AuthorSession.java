@@ -7,19 +7,23 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "authorsession")
 public class AuthorSession {
 
 	@Id
-	@Column(name = "AuthorSessionID")
+	@Column(name = "authorsessiontoken")
 	private String authorSessionToken;
 	
-	@Column
+	@Column(name = "expirationdate")
 	private Date expirationDate;
 	
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "authorID")
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "authorID")
 	private Author Author;
 
 	public AuthorSession(String authorSessionToken, Date expirationDate, com.jpmorgan.beans.Author author) {

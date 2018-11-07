@@ -14,9 +14,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.validation.constraints.Min;
 
 @Entity
+@Table(name = "board")
 public class Board {
 
 
@@ -27,17 +29,17 @@ public class Board {
 	@GeneratedValue(generator = "boardID", strategy = GenerationType.SEQUENCE)
 	private int boardID;
 	
-	@Column
+	@Column(name = "name")
 	private String name;
 	
-	@Column
+	@Column(name = "category")
 	private String Category;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "authorID", nullable = false)
 	private Author author;
 	
-	@Column
+	@Column(name = "submittedtime")
 	private Date submittedTime;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "forumPostID")
