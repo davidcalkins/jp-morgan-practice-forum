@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jpmorgan.beans.Author;
-import com.jpmorgan.beans.ForumPost;
 import com.jpmorgan.services.AuthorService;
 
 @RestController
