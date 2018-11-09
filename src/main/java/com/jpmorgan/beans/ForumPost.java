@@ -1,6 +1,6 @@
 package com.jpmorgan.beans;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +26,7 @@ public class ForumPost {
 	private int forumPostID;
 	
 	@Column(name = "submittedtime")
-	private Date submittedTime;
+	private Timestamp submittedTime;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "authorID", nullable = false)
@@ -39,7 +39,7 @@ public class ForumPost {
 	@JoinColumn(name = "boardID", nullable = false)
 	private Board board;
 
-	public ForumPost(@Min(1) int forumPostID, Date submittedTime, Author author, String body, Board board) {
+	public ForumPost(@Min(1) int forumPostID, Timestamp submittedTime, Author author, String body, Board board) {
 		super();
 		this.forumPostID = forumPostID;
 		this.submittedTime = submittedTime;
@@ -60,11 +60,11 @@ public class ForumPost {
 		this.forumPostID = forumPostID;
 	}
 
-	public Date getSubmittedTime() {
+	public Timestamp getSubmittedTime() {
 		return submittedTime;
 	}
 
-	public void setSubmittedTime(Date submittedTime) {
+	public void setSubmittedTime(Timestamp submittedTime) {
 		this.submittedTime = submittedTime;
 	}
 

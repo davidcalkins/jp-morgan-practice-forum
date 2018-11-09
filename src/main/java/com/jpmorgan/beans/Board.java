@@ -1,6 +1,6 @@
 package com.jpmorgan.beans;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -40,12 +40,12 @@ public class Board {
 	private Author author;
 	
 	@Column(name = "submittedtime")
-	private Date submittedTime;
+	private Timestamp submittedTime;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "forumPostID")
 	private Set<ForumPost> forumPost;
 
-	public Board(@Min(1) int boardID, String name, String category, Author author, Date submittedTime) {
+	public Board(@Min(1) int boardID, String name, String category, Author author, Timestamp submittedTime) {
 		super();
 		this.boardID = boardID;
 		this.name = name;
@@ -66,41 +66,76 @@ public class Board {
 		return boardID;
 	}
 
+
+
 	public void setBoardID(int boardID) {
 		this.boardID = boardID;
 	}
+
+
 
 	public String getName() {
 		return name;
 	}
 
+
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
 
 	public String getCategory() {
 		return Category;
 	}
 
+
+
 	public void setCategory(String category) {
 		Category = category;
 	}
+
+
 
 	public Author getAuthor() {
 		return author;
 	}
 
+
+
 	public void setAuthor(Author author) {
 		this.author = author;
 	}
 
-	public Date getSubmittedTime() {
+
+
+	public Timestamp getSubmittedTime() {
 		return submittedTime;
 	}
 
-	public void setSubmittedTime(Date submittedTime) {
+
+
+	public void setSubmittedTime(Timestamp submittedTime) {
 		this.submittedTime = submittedTime;
 	}
+
+
+
+	public Set<ForumPost> getForumPost() {
+		return forumPost;
+	}
+
+
+
+	public void setForumPost(Set<ForumPost> forumPost) {
+		this.forumPost = forumPost;
+	}
+	
+	
+
+
+
 	
 	
 	
